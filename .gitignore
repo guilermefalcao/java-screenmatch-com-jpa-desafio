@@ -1,0 +1,52 @@
+# ========================================
+# ARQUIVOS COMPILADOS
+# ========================================
+*.class
+target/
+*.jar
+*.war
+*.ear
+
+# ========================================
+# LOGS
+# ========================================
+*.log
+logs/
+
+# ========================================
+# IDEs (IntelliJ, Eclipse, VSCode)
+# ========================================
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+*.swp
+*.swo
+*~
+
+# ========================================
+# SISTEMA OPERACIONAL
+# ========================================
+.DS_Store
+Thumbs.db
+
+# ========================================
+# ⚠️ ARQUIVOS SENSÍVEIS (SEGURANÇA)
+# ========================================
+.env
+.env.local
+.env.*.local
+
+application-local.properties
+application-secrets.properties
+
+*.pem
+*.key
+*.p12
+*.jks
+
+*.bak
+*.backup
+*.sql
