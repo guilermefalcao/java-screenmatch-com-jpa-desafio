@@ -106,6 +106,7 @@ Ao executar a aplicação, você verá o menu:
 2- Cadastrar músicas
 3- Listar músicas
 4- Buscar músicas por artistas
+5- Buscar músicas por artistas (usando @Query)
 
 9- Sair
 ```
@@ -126,6 +127,16 @@ Ao executar a aplicação, você verá o menu:
    - Escolha opção `3`
    - Visualize todas as músicas cadastradas
 
+4. **Buscar músicas por artista (Derived Query):**
+   - Escolha opção `4`
+   - Informe o nome do artista
+   - Usa 2 queries ao banco
+
+5. **Buscar músicas por artista (@Query):**
+   - Escolha opção `5`
+   - Informe o nome do artista
+   - Usa 1 query com JOIN (mais eficiente)
+
 ## 🔒 Segurança
 
 - Arquivo `.env` contém credenciais sensíveis
@@ -134,12 +145,27 @@ Ao executar a aplicação, você verá o menu:
 
 ## 📚 Aprendizados
 
-- Mapeamento de entidades JPA
-- Relacionamentos OneToMany e ManyToOne
-- Uso de Enums em entidades
-- Repositories do Spring Data JPA
-- Derived Query Methods
-- Cascade e FetchType
+### Mapeamento JPA
+- Mapeamento de entidades com anotações JPA (@Entity, @Table, @Id, @GeneratedValue)
+- Mapeamento de Enums com @Enumerated(EnumType.STRING)
+- Relacionamentos OneToMany e ManyToOne entre entidades
+- Uso de Cascade e FetchType para controlar operações e carregamento
+
+### Repositories e Consultas
+- Criação de Repositories com Spring Data JPA
+- Derived Query Methods - queries automáticas baseadas no nome do método
+- JPQL com @Query para consultas customizadas
+- Comparação entre Derived Queries e @Query
+
+### Tratamento de Dados
+- Uso de Optional para evitar NullPointerException
+- Tratamento de exceções (DataIntegrityViolationException)
+- Validação de dados com constraints (UNIQUE)
+
+### Conceitos Avançados
+- Injeção de Dependências com Spring
+- Métodos estáticos para conversão de tipos
+- Programação funcional (forEach, method reference)
 
 ## 👨‍💻 Autor
 

@@ -177,6 +177,26 @@ findByNomeContainingIgnoreCase(String nome)
 - `And`: E lógico
 - `Or`: Ou lógico
 
+### Queries Customizadas com @Query
+
+Para queries mais complexas, use @Query com JPQL:
+
+```java
+@Query("SELECT m FROM Artista a JOIN a.musicas m WHERE a.nome ILIKE %:nome%")
+List<Musica> buscaMusicasPorArtista(String nome);
+```
+
+**Diferenças:**
+
+| Abordagem | Vantagens | Desvantagens |
+|-----------|-----------|-------------|
+| Derived Query | Simples, sem SQL manual | Limitado a queries simples |
+| @Query | Controle total, queries complexas | Precisa escrever JPQL manualmente |
+
+**Quando usar cada um?**
+- Derived Query: Queries simples (1-2 campos)
+- @Query: Queries complexas, JOINs, otimização
+
 ---
 
 ## ⚙️ Configurações
@@ -327,14 +347,19 @@ private TipoArtista tipo;
 
 ## 🎯 Resumo dos Aprendizados
 
-✅ Criar entidades JPA com anotações  
-✅ Mapear relacionamentos OneToMany e ManyToOne  
-✅ Usar Enums em entidades  
+✅ Mapear entidades JPA com anotações  
+✅ Mapear Enums com @Enumerated(EnumType.STRING)  
+✅ Criar relacionamentos OneToMany e ManyToOne  
+✅ Usar Cascade e FetchType corretamente  
 ✅ Criar repositories com Spring Data JPA  
 ✅ Usar Derived Query Methods  
+✅ Criar queries customizadas com @Query e JPQL  
+✅ Comparar Derived Queries vs @Query  
 ✅ Configurar PostgreSQL com Spring Boot  
-✅ Entender Cascade e FetchType  
+✅ Entender Optional e tratamento de exceções  
 ✅ Proteger credenciais com .env  
+✅ Usar métodos estáticos para conversão de tipos  
+✅ Aplicar programação funcional (forEach, method reference)  
 
 ---
 
